@@ -34,7 +34,7 @@ function App() {
     });
 
     peer.on('call', (call: PeerCall) => {
-      globalThis?.navigator.mediaDevices.getUserMedia({ video: true, audio: true })
+      globalThis?.navigator.mediaDevices.getUserMedia({ audio: true })
       .then((mediaStream: MediaStream | undefined) => {
         if(currentUserVideoRef.current && mediaStream) {
 
@@ -57,7 +57,7 @@ function App() {
   }, [])
 
   const call = (remotePeerId: string) => {
-    globalThis?.navigator.mediaDevices.getUserMedia({ video: true, audio: true })
+    globalThis?.navigator.mediaDevices.getUserMedia({ audio: true })
     .then((mediaStream: MediaStream | undefined) => {
       if(currentUserVideoRef.current && mediaStream) {
 
